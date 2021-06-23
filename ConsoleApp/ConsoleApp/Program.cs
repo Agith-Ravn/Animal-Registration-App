@@ -6,6 +6,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            var dyr = new Dyr();
             Melding.AppInfo();
         }
     }
