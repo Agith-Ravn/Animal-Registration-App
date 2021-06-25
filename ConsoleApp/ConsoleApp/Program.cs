@@ -19,25 +19,29 @@ namespace ConsoleApp
              */
 
             var app = new RegistrationApp(
-                new Animal("Human", "Mammals"),
-                new Animal("Dog", "Mammals"),
-                new Animal("Tarantula", "Arthropods"),
-                new Animal("Dragonfly", "Arthropods"),
-                new Animal("Raven", "Bird"),
-                new Animal("Tiger shark", "Fish"),
-                new Animal("Clownfish", "Fish"),
-                new Animal("Coconut octopus", "Mollusks"),
-                new Animal("Tomato frog", "Amphibians"),
-                new Animal("Sinai Agama", "Reptiles"),
-                new Animal("Crocodile", "Reptiles")
-                );
+                new Mammals("Human", "Mammals"),
+                new Mammals("Dog", "Mammals"));
+
+
+                //new Animal("Tarantula", "Arthropods"),
+                //new Animal("Dragonfly", "Arthropods"),
+                //new Animal("Raven", "Bird"),
+                //new Animal("Tiger shark", "Fish"),
+                //new Animal("Clownfish", "Fish"),
+                //new Animal("Coconut octopus", "Mollusks"),
+                //new Animal("Tomato frog", "Amphibians"),
+                //new Animal("Sinai Agama", "Reptiles"),
+                //new Animal("Crocodile", "Reptiles")
+                //);
 
             var x = false;
             while (x == false)
             {
-                Console.WriteLine(app.AppInfo());
-                var command = Console.ReadLine();
-                app.HandleCommand(command);
+                var command = new Command(app);
+                command.AppInfo();
+                //Console.WriteLine(app.AppInfo());
+                //var command = Console.ReadLine();
+                //app.HandleCommand(command);
 
             }
 

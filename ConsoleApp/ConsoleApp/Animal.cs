@@ -1,9 +1,12 @@
-﻿namespace ConsoleApp
+﻿using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp
 {
     public class Animal
     {
-        private string Species { get; set; }
-        private string Group { get; set; }
+        public string Species { get; set; }
+        public string Group { get; set; }
 
         public Animal(string species, string group)
         {
@@ -11,9 +14,9 @@
             Group = group;
         }
 
-        public string GetDescription()
-        {
-            return $"Species: {Species} | Group: {Group}";
-        }
+        //public string GetDescription()
+        //{
+        //    return $"Species: {Species} | Group: {Group}";
+        //}
     }
 }
