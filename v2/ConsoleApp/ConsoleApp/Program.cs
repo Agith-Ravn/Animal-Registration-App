@@ -37,8 +37,7 @@ namespace ConsoleApp
             var x = false;
             while (x == false)
             {
-                var command = new Command(app);
-                command.AppInfo();
+                Command.AppInfo();
                 //Console.WriteLine(app.AppInfo());
                 //var command = Console.ReadLine();
                 //app.HandleCommand(command);
