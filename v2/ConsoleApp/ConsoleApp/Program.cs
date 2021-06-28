@@ -18,29 +18,41 @@ namespace ConsoleApp
              *  - Birds      |  Fugler
              */
 
-            var app = new RegistrationApp(
-                new Mammals("Human", "Mammals"),
-                new Mammals("Dog", "Mammals"));
+            var amphibiansList = new AnimalGroup(
+                new Animal("Tomato frog", "Amphibians"));
 
+            var arthropodsList = new AnimalGroup(
+                new Animal("Tarantula", "Arthropods"),
+                new Animal("Dragonfly", "Arthropods"));
 
-                //new Animal("Tarantula", "Arthropods"),
-                //new Animal("Dragonfly", "Arthropods"),
-                //new Animal("Raven", "Bird"),
-                //new Animal("Tiger shark", "Fish"),
-                //new Animal("Clownfish", "Fish"),
-                //new Animal("Coconut octopus", "Mollusks"),
-                //new Animal("Tomato frog", "Amphibians"),
-                //new Animal("Sinai Agama", "Reptiles"),
-                //new Animal("Crocodile", "Reptiles")
-                //);
+            var mammalsList = new AnimalGroup(
+                new Animal("Human", "Mammals"),
+                new Animal("Dog", "Mammals"));
+
+            var birdsList = new AnimalGroup(
+                new Animal("Raven", "Bird"));
+
+            var fishList = new AnimalGroup(
+                new Animal("Tiger shark", "Fish"),
+                new Animal("Clownfish", "Fish"));
+
+            var mollusksList = new AnimalGroup(
+                new Animal("Coconut octopus", "Mollusks"));
+
+            var reptilesList = new AnimalGroup(
+                new Animal("Sinai Agama", "Reptiles"),
+                new Animal("Crocodile", "Reptiles"));
+
+            var animals = new Animals(amphibiansList, arthropodsList,
+                birdsList, fishList, mammalsList, mollusksList, reptilesList);
+
+            var app = new RegistrationApp(animals);
 
             var x = false;
             while (x == false)
             {
-                Command.AppInfo();
-                //Console.WriteLine(app.AppInfo());
-                //var command = Console.ReadLine();
-                //app.HandleCommand(command);
+                var command = new Command(app);
+                command.AppInfo();
 
             }
 

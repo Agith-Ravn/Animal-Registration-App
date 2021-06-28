@@ -14,9 +14,14 @@ namespace ConsoleApp
             Group = group;
         }
 
-        //public string GetDescription()
-        //{
-        //    return $"Species: {Species} | Group: {Group}";
-        //}
+        public string GetSpeciesDescription()
+        {
+            return $"Species: {Species}";
+        }
+
+        public string GetGroupDescription()
+        {
+            return $"Animal Group: {Group}";
+        }
     }
 }
