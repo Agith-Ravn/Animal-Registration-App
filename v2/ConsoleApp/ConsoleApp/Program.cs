@@ -25,16 +25,16 @@ namespace ConsoleApp
                 new Animal("Tarantula", "Arthropods"),
                 new Animal("Dragonfly", "Arthropods"));
 
-            var mammalsList = new AnimalGroup(
-                new Animal("Human", "Mammals"),
-                new Animal("Dog", "Mammals"));
-
             var birdsList = new AnimalGroup(
-                new Animal("Raven", "Bird"));
+                new Animal("Raven", "Birds"));
 
             var fishList = new AnimalGroup(
                 new Animal("Tiger shark", "Fish"),
                 new Animal("Clownfish", "Fish"));
+
+            var mammalsList = new AnimalGroup(
+                new Animal("Human", "Mammals"),
+                new Animal("Dog", "Mammals"));
 
             var mollusksList = new AnimalGroup(
                 new Animal("Coconut octopus", "Mollusks"));
@@ -42,7 +42,7 @@ namespace ConsoleApp
             var reptilesList = new AnimalGroup(
                 new Animal("Sinai Agama", "Reptiles"),
                 new Animal("Crocodile", "Reptiles"));
-
+            
             var animals = new Animals(amphibiansList, arthropodsList,
                 birdsList, fishList, mammalsList, mollusksList, reptilesList);
 

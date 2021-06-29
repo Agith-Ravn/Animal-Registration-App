@@ -14,27 +14,19 @@ namespace ConsoleApp
         }
 
 
-        public void AddAnimal(string species, string group)
+        public void AddAnimal(string species, string group, int index)
         {
-
-            Animals.Add(new Animal(species, group));
-            Console.Clear();
-            Console.WriteLine($"Du har lagt til Species: {species} - Group: {group} \n");
+            Animals.AddAnimal(species, group, index);
         }
 
         public void GetAllAnimalDescription()
         {
-            Console.Clear();
             Animals.GetAllAnimalDescription();
         }
 
-        //public void DeleteAnimal(int index)
-        //{
-        //    Animals.RemoveAt(index);
-        //    Console.Clear();
-        //    Console.WriteLine($"Slettet \n");
-        //}
-
-
+        public void DeleteAnimal(string group, int index)
+        {
+            Animals.DeleteAnimal(group, index);
+        }
     }
 }

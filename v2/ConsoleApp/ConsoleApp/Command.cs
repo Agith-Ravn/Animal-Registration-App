@@ -53,18 +53,19 @@ namespace ConsoleApp
 
                 if (command2.Contains("-"))
                 {
-                    string[] x = command2.Split("-");
-                    x[0] = x[0].Replace("-", " ");
+                    string[] c = command2.Split("-");
+                    c[0] = c[0].Replace("-", " ");
+                    var index = Convert.ToInt32(c[1].Trim()) - 1;
 
-                    if (x[1] == " 1") x[1] = "Amphibians";
-                    else if (x[1] == " 2") x[1] = "Arthropods";
-                    else if (x[1] == " 3") x[1] = "Birds";
-                    else if (x[1] == " 4") x[1] = "Fish";
-                    else if (x[1] == " 5") x[1] = "Mammals";
-                    else if (x[1] == " 6") x[1] = "Mollusks";
-                    else if (x[1] == " 7") x[1] = "Reptiles";
+                    if (c[1].Trim() == "1") c[1] = "Amphibians";
+                    else if (c[1].Trim() == "2") c[1] = "Arthropods";
+                    else if (c[1].Trim() == "3") c[1] = "Birds";
+                    else if (c[1].Trim() == "4") c[1] = "Fish";
+                    else if (c[1].Trim() == "5") c[1] = "Mammals";
+                    else if (c[1].Trim() == "6") c[1] = "Mollusks";
+                    else if (c[1].Trim() == "7") c[1] = "Reptiles";
 
-                    App.AddAnimal(x[0].TrimEnd(), x[1]);
+                    App.AddAnimal(c[0].TrimEnd(), c[1], index);
                 }
                 else
                 {
@@ -73,22 +74,24 @@ namespace ConsoleApp
                 }
             }
 
-        //    else if (command == "2")
-        //    {
-        //        App.GetAllAnimalDescription();
-        //        Console.WriteLine("\nSkriv nr på dyr som skal slettes");
-        //        var command2 = Convert.ToInt32(Console.ReadLine());
+            else if (command == "2")
+            {
+                App.GetAllAnimalDescription();
+                Console.WriteLine("\nSkriv Gruppe og nr på dyr som skal slettes. Eksempel: \"Mammals - 1\"");
+                var command2 = Console.ReadLine();
 
-        //        if (command2 > 1 && command2 < App.Animals.Count + 1)
-        //        {
-        //            App.DeleteAnimal(Convert.ToInt32(command2) - 1);
-        //        }
-        //        else
-        //        {
-        //            WrongFormat();
-        //        }
-        //        AppInfo();
-        //    }
+                string[] c = command2.Split("-");
+
+                if (ValidGroup(c[0].Replace("-"," ").Trim()) && Convert.ToInt32(c[1]) > 0)
+                {
+                    App.DeleteAnimal(c[0].Trim(), Convert.ToInt32(c[1]) - 1);
+                }
+                else
+                {
+                    WrongFormat();
+                }
+                AppInfo();
+            }
 
             else if (command == "3")
             {
@@ -96,10 +99,26 @@ namespace ConsoleApp
                 TilbakeTilAppInfo();
             }
 
-        //    else
-        //    {
-        //        WrongFormat();
-        //    }
+            else
+            {
+                WrongFormat();
+            }
+
+        }
+
+        private bool ValidGroup(string group)
+        {
+            if (group == "Amphibians" || group == "Arthropods" || group == "Birds" ||
+                group == "Fish" || group == "Mammals" || group == "Mollusks" ||
+                group == "Reptiles")
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
 
         }
     }

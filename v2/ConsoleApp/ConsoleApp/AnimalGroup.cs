@@ -27,9 +27,18 @@ namespace ConsoleApp
             Console.Write("\n");
         }
 
-        public void Add(Animal animal)
+        public void AddAnimal(string species, string group)
         {
-            AnimalGroupList.Add(animal);
+            AnimalGroupList.Add(new Animal(species, group));
+            Console.Clear();
+            Console.WriteLine($"Du har lagt til Species: {species} - Group: {group} \n");
+        }
+
+        public void DeleteAnimal(int index)
+        {
+            AnimalGroupList.RemoveAt(index);
+            Console.Clear();
+            Console.WriteLine($"Slettet \n");
         }
     }
 }
